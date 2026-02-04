@@ -34,7 +34,106 @@ optimize this code :root {
     --kn-radius: 4px;
     --kn-hero-overlay: linear-gradient(rgba(16, 30, 61, 0.85), rgba(16, 30, 61, 0.7));
 }
+/* --- ADVANTAGE SECTION - ELITE RESPONSIVE CSS --- */
+.advantage-elite {
+    padding: 100px 0 !important;
+    background-color: #ffffff !important;
+    overflow: hidden !important;
+}
 
+.container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+/* Desktop Row Setup */
+.row-premium {
+    display: flex !important;
+    align-items: center !important;
+    gap: 80px !important;
+    margin-bottom: 120px !important;
+}
+
+.row-reverse {
+    flex-direction: row-reverse !important;
+}
+
+.col-img, .col-text {
+    flex: 1 !important;
+    position: relative !important;
+    width: 100% !important;
+}
+
+/* Image UI Integration */
+.image-wrapper {
+    position: relative !important;
+    z-index: 2 !important;
+    /* Professional block shadow */
+    box-shadow: 20px 20px 0px #f4f1ea !important; 
+}
+
+.image-wrapper img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border: 1px solid #eee !important;
+    transition: transform 0.5s ease !important;
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.02) !important;
+}
+
+.floating-label {
+    position: absolute !important;
+    bottom: -15px !important;
+    right: -15px !important;
+    background: #121d33 !important; /* KN Navy */
+    color: #ffffff !important;
+    padding: 10px 20px !important;
+    font-family: sans-serif !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    z-index: 3 !important;
+}
+
+.label-left { right: auto !important; left: -15px !important; }
+
+/* Mobile Adaptations */
+@media (max-width: 991px) {
+    .advantage-elite {
+        padding: 60px 0 !important;
+    }
+
+    .row-premium, .row-premium.row-reverse {
+        flex-direction: column !important; /* Force stack on mobile */
+        gap: 40px !important;
+        margin-bottom: 80px !important;
+        text-align: center !important;
+    }
+
+    .col-img {
+        max-width: 500px !important; /* Prevents image from getting too large on tablets */
+        margin: 0 auto !important;
+    }
+
+    .advantage-h4 {
+        font-size: 1.8rem !important;
+        margin-top: 20px !important;
+    }
+
+    .advantage-p {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .benefit-list-elite {
+        display: inline-block !important;
+        text-align: left !important;
+    }
+}
 /* Base Adjustments */
 body { 
     font-family: 'Inter', sans-serif; 
@@ -1520,4 +1619,5 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--brand-navy); f
 @media (max-width: 992px) {
     .about-flex-layout { flex-direction: column; }
     .about-visual-side { margin-bottom: 60px; }
+
 }
