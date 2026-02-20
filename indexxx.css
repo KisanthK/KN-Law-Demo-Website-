@@ -24,7 +24,8 @@
     --light-gray: #f8f9fa;
     --text-main: #333;
     --white: #ffffff;
-
+--nav-height-fixed: 85px; /* <--- ADD THIS SEMICOLON */
+    --primary-dark: #1a252f;
 }
 /* --- 1. Ergonomic Back Link (Color Corrected) --- */
 /* --- 1. Fix Mismatched Text & Button Accents --- */
@@ -52,48 +53,46 @@
 }
 
 /* --- 2. Ergonomic "Back to Portfolio" Button --- */
-/* --- 1. Back Link (Forced Visibility & Branding) --- */
+/* FORCED BUTTON VISIBILITY */
 .back-link {
     position: fixed !important;
     top: 20px !important;
     left: 20px !important;
-    z-index: 10005 !important; /* Higher than your navbar (10000) */
-    background: var(--kn-navy) !important; 
-    backdrop-filter: blur(8px) !important;
-    color: var(--kn-gold) !important; 
-    padding: 10px 22px !important;
+    z-index: 10005 !important; /* Forces it above the navbar */
+    display: block !important; 
+    
+    /* Branding Colors */
+    background-color: #002147 !important; /* Hardcoded Navy */
+    color: #c5a059 !important;           /* Hardcoded Gold */
+    
+    /* Shape & Size */
+    padding: 12px 24px !important;
     border-radius: 50px !important;
+    border: 2px solid #c5a059 !important;
+    
+    /* Text Styling */
     text-decoration: none !important;
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    border: 1px solid var(--kn-gold) !important;
-    transition: var(--kn-transition) !important;
-    display: inline-block !important; /* Ensures it's not hidden by other layouts */
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
 }
 
 .back-link:hover {
-    background: var(--kn-gold) !important;
-    color: white !important;
-    transform: translateY(-2px) !important;
+    background-color: #c5a059 !important;
+    color: #ffffff !important;
 }
 
-/* --- 2. Mobile Ergonomics (Forced Bottom Positioning) --- */
 @media (max-width: 768px) {
     .back-link {
         top: auto !important;
-        bottom: 25px !important; /* Ergonomic thumb reach for mobile users */
+        bottom: 30px !important; /* Ergonomic thumb reach */
         left: 50% !important;
         transform: translateX(-50%) !important;
-        width: 85% !important;
+        width: 80% !important;
         text-align: center !important;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
-    }
-    
-    .back-link:hover {
-        transform: translateX(-50%) translateY(-2px) !important;
     }
 }
-
 /* --- 3. Stat Counter & UI Consistency --- */
 .stat-number {
     color: var(--kn-navy) !important;
@@ -1201,4 +1200,5 @@ h2 {
     color: #c5a059 !important
 
 }
+
 
