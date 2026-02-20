@@ -52,78 +52,58 @@
 }
 
 /* --- 2. Ergonomic "Back to Portfolio" Button --- */
+/* --- 1. Back Link (Forced Visibility & Branding) --- */
 .back-link {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 10000; /* Stays above the Elite Nav */
-    background: var(--kn-navy); 
-    backdrop-filter: blur(8px);
-    color: var(--primary); 
-    padding: 10px 22px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border: 1px solid var(--primary);
-    transition: var(--kn-transition);
+    position: fixed !important;
+    top: 20px !important;
+    left: 20px !important;
+    z-index: 10005 !important; /* Higher than your navbar (10000) */
+    background: var(--kn-navy) !important; 
+    backdrop-filter: blur(8px) !important;
+    color: var(--kn-gold) !important; 
+    padding: 10px 22px !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    border: 1px solid var(--kn-gold) !important;
+    transition: var(--kn-transition) !important;
+    display: inline-block !important; /* Ensures it's not hidden by other layouts */
 }
 
 .back-link:hover {
-    background: var(--primary);
-    color: white;
-    transform: translateY(-2px);
+    background: var(--kn-gold) !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
 }
 
-/* --- 3. Mobile Ergonomics (Thumb-Driven Positioning) --- */
+/* --- 2. Mobile Ergonomics (Forced Bottom Positioning) --- */
 @media (max-width: 768px) {
     .back-link {
-        top: auto;
-        bottom: 25px; /* Moved to bottom for ergonomic thumb reach */
-        left: 50%;
-        transform: translateX(-50%);
-        width: 85%;
-        text-align: center;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        top: auto !important;
+        bottom: 25px !important; /* Ergonomic thumb reach for mobile users */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 85% !important;
+        text-align: center !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
     }
     
     .back-link:hover {
-        transform: translateX(-50%) translateY(-2px);
-    }
-
-    /* Adjusting Hero Text for Mobile Scaling */
-    .hero h1 {
-        font-size: 2.2rem;
-        line-height: 1.2;
+        transform: translateX(-50%) translateY(-2px) !important;
     }
 }
 
-/* --- 4. Stat Counter Colors --- */
+/* --- 3. Stat Counter & UI Consistency --- */
 .stat-number {
-    color: var(--primary);
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 800;
+    color: var(--kn-navy) !important;
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
 }
-/* --- GLOBAL MOBILE FIXES --- */
-@media (max-width: 992px) {
-    /* This ensures the menu stays hidden until 'active' is added */
-    .nav-menu-group {
-        position: fixed !important;
-        right: -100% !important; 
-        top: 85px !important;
-        flex-direction: column !important;
-        background-color: var(--kn-navy) !important;
-        width: 100% !important;
-        height: calc(100vh - 85px) !important;
-        transition: 0.4s ease-in-out !important;
-        z-index: 9999 !important;
-    }
 
-    /* This is the missing piece that brings the menu onto the screen */
-    .nav-menu-group.active {
-        right: 0 !important;
-    }
+.text-gold, .label-gold {
+    color: var(--kn-gold) !important;
 }
 /* 1. Mobile Navigation & Hamburger */
 .menu-toggle {
@@ -1221,3 +1201,4 @@ h2 {
     color: #c5a059 !important
 
 }
+
