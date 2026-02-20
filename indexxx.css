@@ -26,6 +26,70 @@
     --white: #ffffff;
 
 }
+/* --- 1. Ergonomic Back Link (Color Corrected) --- */
+.back-link {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    /* Updated to use your Deep Navy for the base */
+    background: rgba(44, 62, 80, 0.9); 
+    backdrop-filter: blur(8px);
+    /* Updated to your Bright Sky Blue */
+    color: var(--primary); 
+    padding: 10px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid var(--primary);
+    transition: 0.4s ease; /* Using a standard smooth transition */
+}
+
+.back-link:hover {
+    /* Inverse style on hover for visual feedback */
+    background: var(--primary);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 174, 239, 0.3);
+}
+
+/* --- 2. Mobile Ergonomics (Thumb-Driven) --- */
+@media (max-width: 768px) {
+    .back-link {
+        top: auto;
+        bottom: 20px; /* Positioned at bottom for easier thumb reach */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        text-align: center;
+        background: var(--primary); /* Full color on mobile for visibility */
+        color: white;
+        font-size: 0.9rem;
+        padding: 14px;
+        border: none;
+        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link:hover {
+        transform: translateX(-50%) translateY(-2px);
+        background: var(--dark);
+    }
+}
+
+/* --- 3. Bento Grid Color Alignment --- */
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Ensuring card accents match the baby blue variable */
+    .bento-item {
+        border: 1px solid rgba(0, 174, 239, 0.1);
+        background: white;
+    }
+}
 /* --- GLOBAL MOBILE FIXES --- */
 @media (max-width: 992px) {
     /* This ensures the menu stays hidden until 'active' is added */
@@ -1140,4 +1204,5 @@ h2 {
 }
 .text-gold {
     color: #c5a059 !important
+
 }
