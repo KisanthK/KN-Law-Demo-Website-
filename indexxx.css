@@ -27,15 +27,38 @@
 
 }
 /* --- 1. Ergonomic Back Link (Color Corrected) --- */
+/* --- 1. Fix Mismatched Text & Button Accents --- */
+.text-gold, .label-gold {
+    color: var(--primary) !important; /* Forces the "Gold" classes to use your Brand Blue */
+}
+
+.btn-gold {
+    background: var(--primary);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: var(--kn-transition);
+    border: 1px solid var(--primary);
+}
+
+.btn-gold:hover {
+    background: transparent;
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-soft);
+}
+
+/* --- 2. Ergonomic "Back to Portfolio" Button --- */
 .back-link {
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 9999;
-    /* Updated to use your Deep Navy for the base */
-    background: rgba(44, 62, 80, 0.9); 
+    z-index: 10000; /* Stays above the Elite Nav */
+    background: var(--kn-navy); 
     backdrop-filter: blur(8px);
-    /* Updated to your Bright Sky Blue */
     color: var(--primary); 
     padding: 10px 22px;
     border-radius: 50px;
@@ -43,52 +66,44 @@
     font-size: 0.85rem;
     font-weight: 600;
     border: 1px solid var(--primary);
-    transition: 0.4s ease; /* Using a standard smooth transition */
+    transition: var(--kn-transition);
 }
 
 .back-link:hover {
-    /* Inverse style on hover for visual feedback */
     background: var(--primary);
-    color: #ffffff;
+    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0, 174, 239, 0.3);
 }
 
-/* --- 2. Mobile Ergonomics (Thumb-Driven) --- */
+/* --- 3. Mobile Ergonomics (Thumb-Driven Positioning) --- */
 @media (max-width: 768px) {
     .back-link {
         top: auto;
-        bottom: 20px; /* Positioned at bottom for easier thumb reach */
+        bottom: 25px; /* Moved to bottom for ergonomic thumb reach */
         left: 50%;
         transform: translateX(-50%);
-        width: 80%;
+        width: 85%;
         text-align: center;
-        background: var(--primary); /* Full color on mobile for visibility */
-        color: white;
-        font-size: 0.9rem;
-        padding: 14px;
-        border: none;
-        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
-
+    
     .back-link:hover {
         transform: translateX(-50%) translateY(-2px);
-        background: var(--dark);
+    }
+
+    /* Adjusting Hero Text for Mobile Scaling */
+    .hero h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
     }
 }
 
-/* --- 3. Bento Grid Color Alignment --- */
-@media (max-width: 768px) {
-    .bento-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    /* Ensuring card accents match the baby blue variable */
-    .bento-item {
-        border: 1px solid rgba(0, 174, 239, 0.1);
-        background: white;
-    }
+/* --- 4. Stat Counter Colors --- */
+.stat-number {
+    color: var(--primary);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 800;
 }
 /* --- GLOBAL MOBILE FIXES --- */
 @media (max-width: 992px) {
